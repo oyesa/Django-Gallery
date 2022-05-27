@@ -1,0 +1,23 @@
+__System Features__
+
+1. Image Model.
+-Image
+-Image Name.
+-Image Description.
+-Image Location Foreign Key.
+-Image category Foreign Key.
+2. Location Model >>implement the save, update and delete methods 
+3. Category Model>>implement the save, update and delete methods 
+
+Image Model methods
+save_image() 
+delete_image() 
+update_image() 
+get_image_by_id(id)
+search_image(category) 
+filter_by_location(location)
+
+4.Search Functionality
+5.Image Details
+6.Copy Link
+7.Admin Dashboard
