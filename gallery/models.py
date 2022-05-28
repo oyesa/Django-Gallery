@@ -49,5 +49,27 @@ class Image(models.Model):
   location = models.ForeignKey(Location, on_delete=models.CASCADE)
   category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
+  def save_image(self):
+    self.save()
+
+  def delete_image(self):
+    self.delete()
+
+  @classmethod
+  def update_image(cls, id, image):
+    cls.objects.filter(id=id).update(photo=image)
+
+  @classmethod
+  def search_image(cls, category):
+    try:
+      searched = Category.objects.get(name = category)
+      images = Image.objects.filter(category = searched.id)
+      return images
+    except Exception:
+      return  "There are no images in that category"
+      
+
+
+
   def __str__(self):
     return self.name
