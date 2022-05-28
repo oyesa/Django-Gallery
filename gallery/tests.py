@@ -61,3 +61,19 @@ class CategoryTest(TestCase):
         self.tech.update_category(self.tech.id,'technology')
         update = Category.objects.get(name = "technology")
         self.assertEqual(update.name, 'technology')
+
+
+#Test Image
+class ImageTestClass(TestCase):
+    def setUp(self):
+        self.tech = Category( name= "tech")
+        self.malindi = Location (name = "Malindi")
+        self.pods = Image(photo = "image.png", name ='Airpods', description = 'The latest airpods', category= self.tech, location= self.malindi)
+
+    def tearDown(self):
+        Image.objects.all().delete()
+        Category.objects.all().delete()
+        Location.objects.all().delete()
+
+    def test_image_instance(self):
+        self.assertTrue(isinstance(self.pods, Image))
