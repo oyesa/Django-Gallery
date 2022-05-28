@@ -1,0 +1,51 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+<div class="container-fluid mt-5 text-center">
+  {% if images%}
+  <h2>{{message}}</h2>
+  <div class="content">
+    <div>
+      {% for image in first %}
+      <img
+        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.location.id}}','{{image.category}}', '{{image.category.id}}', '{{image.post_date}}') "
+        class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
+      {%endfor%}
+    </div>
+    <div>
+      {% for image in second %}
+      <img
+        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.location.id}}','{{image.category}}')"
+        class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
+      {%endfor%}
+    </div>
+    <div>
+      {% for image in third %}
+      <img
+        onclick="showModal('{{image.id}}','{{image.name}}','{{image.description}}','{{image.photo.url}}','{{image.location}}','{{image.location.id}}','{{image.category}}')"
+        class="image img-thumbnail" id={{image.name}} src="{{image.photo.url}}">
+      {%endfor%}
+    </div>
+  </div>
+  {% else %}
+  <div style="padding-left: 25%; padding-right: 25%; padding-bottom: 25%;">
+  <img src="" alt="not-found" style="width:10%; height: 10%;">
+  <h2>{{message}}</h2><br>
+  <!-- checkout categories -->
+  {% if categories %}
+  <h3>Check out other categories:</h3>
+  {% for category in categories %}
+  <a href="/category/{{category.id}}" class="badge badge-secondary" style="margin-left: 1%;">#{{category.name}}</a>
+  {% endfor %}
+  {% endif %}
+  <!-- checkout locations -->
+  {% if locations %}
+  <h3>Check out these locations:</h3>
+  {% for location in locations %}
+  <a href="/location/{{location.id}}" class="badge badge-secondary" style="margin-left: 1%;"><i class="fas fa-map-marker-alt"></i>&nbsp;{{location.name}}</a>
+  {% endfor %}
+  {% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
