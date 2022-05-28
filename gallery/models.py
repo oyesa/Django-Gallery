@@ -60,6 +60,16 @@ class Image(models.Model):
     cls.objects.filter(id=id).update(photo=image)
 
   @classmethod
+  def display_all_images(cls):
+    return cls.objects.all()
+
+  @classmethod
+  def filter_by_location(cls,location):
+        searched = Location.objects.get(name = location)
+        images = Image.objects.filter(location = searched.id)
+        return images 
+
+  @classmethod
   def search_image(cls, category):
     try:
       searched = Category.objects.get(name = category)
@@ -67,9 +77,9 @@ class Image(models.Model):
       return images
     except Exception:
       return  "There are no images in that category"
-      
-
-
 
   def __str__(self):
     return self.name
+  
+  class Meta:
+      ordering = ['name']
