@@ -24,3 +24,6 @@ filter_by_location(location)
 
 __Setting up Cloudinary__
 https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/
+
+__Django-numpy__
+https://pypi.org/project/django-numpy/
