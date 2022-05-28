@@ -21,3 +21,6 @@ filter_by_location(location)
 5.Image Details
 6.Copy Link
 7.Admin Dashboard
+
+__Setting up Cloudinary__
+https://www.section.io/engineering-education/uploading-images-to-cloudinary-from-django-application/

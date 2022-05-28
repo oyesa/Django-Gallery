@@ -1,6 +1,6 @@
 from unicodedata import category
 from django.db import models
-
+from cloudinary.models import CloudinaryField
 
 
 
@@ -22,6 +22,10 @@ class Location(models.Model):
     @classmethod
     def delete_location(cls):
       cls.objects.all()
+
+    @classmethod
+    def display_all_locations(cls):
+      return cls.objects.all()
 
     def __str__(self):
         return self.name
@@ -48,6 +52,7 @@ class Image(models.Model):
   description = models.CharField(max_length=100)
   location = models.ForeignKey(Location, on_delete=models.CASCADE)
   category = models.ForeignKey(Category, on_delete=models.CASCADE)
+  photo = CloudinaryField('photo', blank=True, null=True)
 
   def save_image(self):
     self.save()
