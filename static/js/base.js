@@ -40,3 +40,57 @@ function flipCard(event) {
   }
   
 }
+
+
+function closeCards() {
+  $cards.each( function() {
+    $(this)
+      .filter('.flip-in')
+      .removeClass('flip-in')
+      .queue( function() {
+        // Force reflow hack
+        var reflow = this.offsetHeight;
+        $(this)
+          .addClass('flip-out')
+          .dequeue();
+      })
+      
+  });
+}
+
+function openCard($card) {
+  $card
+    .removeClass('flip-out')
+    .queue( function() {
+      // Force reflow hack
+      var reflow = this.offsetHeight;
+      $(this)
+        .addClass('flip-in')
+        .dequeue();
+    });
+    
+}
+
+function showModal(image_id,name,description,url,location,location_id,category,category_id,posted){
+  $("#img-name").text(name)
+  $("#imageModal").modal("show")
+  $(".modal-title").text(name)
+  var img_link ="/image/" + image_id
+  $(".mod-img").attr("src",url)
+  $("#img-link").attr("href", img_link)
+  $("#img-desc").text(description)
+  var loc_link = "/location/" + location_id
+  $("#img-loc").text(location)
+  $("#img-loc").attr("href", loc_link)
+  var cat_link = "/category/" + category_id
+  $("#img-cat").attr("href", cat_link)
+  $("#img-cat").text("#" + category)
+  $("#img-pos").text(posted)
+  $("#copy-url").val(window.location.origin + "/image/" + image_id)
+}
+
+function share(){
+  $("#copy-url").select()
+  document.execCommand('copy');
+  alert("Link copied to your clipboard")
+}
