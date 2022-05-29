@@ -41,14 +41,12 @@ function flipCard(event) {
   
 }
 
-
 function closeCards() {
   $cards.each( function() {
     $(this)
       .filter('.flip-in')
       .removeClass('flip-in')
       .queue( function() {
-        // Force reflow hack
         var reflow = this.offsetHeight;
         $(this)
           .addClass('flip-out')
@@ -62,7 +60,6 @@ function openCard($card) {
   $card
     .removeClass('flip-out')
     .queue( function() {
-      // Force reflow hack
       var reflow = this.offsetHeight;
       $(this)
         .addClass('flip-in')
