@@ -11,6 +11,19 @@ font-family: 'Dancing Script', cursive;
   font-family: 'Dancing Script', cursive;
 }
 
+
+.nav-item {
+  color: #a00;
+  padding: 6px 12px;
+  margin: 0 6px;
+  z-index: 1;
+  position: relative;
+}
+
+.nav-admin{
+  margin-right: 0 !important;
+}
+
 .container-fluid {
   margin-top: 6%;
   margin-left: 2%;
@@ -24,6 +37,12 @@ font-family: 'Dancing Script', cursive;
   grid-gap: 20px;
   grid-auto-rows: auto;
 }
+
+#home-btn {
+  color: #a00 !important;
+  font-size: 15px;
+}
+
 .img-thumbnail {
   cursor: pointer !important;
 }

@@ -1,11 +1,28 @@
 
-<nav class="navbar navbar-default">
+<!-- <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a href="{% url 'home' %}" class="nav-item is-active" active-color="orange" id="brand">TG</a>
-        <img alt="" src="">
+      <a href="{% url 'home' %}" class="nav-item is-active" active-color="#A00" id="brand"><i class="fa fa-home" aria-hidden="true"></i>
+        <strong> Tribe Gallery </strong></a>
       </a>
+    </div>
+    <div class="nav-admin">
       <a href="/admin" class="nav-item" active-color="#A00"><i class="fas fa-user-tie"></i>&nbsp;Admin</a>
     </div>
   </div>
-</nav>
+</nav> -->
+
+<div class="menu">
+  <div class="container-fluid">
+  <div class="navbar-header">
+    <a href="{% url 'home' %}">Tribe Gallery</a>
+  </div>
+  <div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/admin" ><span class="glyphicon glyphicon-user"></span> Admin</a></li>
+      <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li> -->
+    </ul>
+  </div>
+</div>
+</div>
+
