@@ -128,7 +128,7 @@ color: #a00;
 }
 
 #home-btn {
-  color: #00547E !important;
+  color: #00F !important;
   font-size: 15px;
 }
 
@@ -238,6 +238,7 @@ p {
   padding: 20px 0;
   color: #f0f9ff;
   background-color: #00f;
+  margin-top: 5px;
 }
 
 .footer-dark .item.social {

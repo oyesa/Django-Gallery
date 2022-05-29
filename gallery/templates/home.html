@@ -5,9 +5,9 @@
 <div class="container-fluid-home">
   <div class="text-center">
     <div class="jumbotron">
-      <h1 style="color: #00F;"><strong>Tribe Gallery</strong></h1>
-      <p> Tribe: /trʌɪb/ </p>
-      <p>An aggregate of people united by ties of descent from a common ancestor, community of customs and traditions... <br> Sometimes tribe is used to simply mean "family" or "clan". <br> Choose your tribe wisely!</p>
+      <h1 style="color: #00F; font-size: 110px;"><strong>Tribe Gallery</strong></h1>
+      <p> Tribe: /trʌɪb/:</p>
+      <p>An aggregate of people united by ties of descent from a common ancestor, community of customs and traditions. <br> Sometimes tribe is used to simply mean "family" or "clan". <br> Choose your tribe wisely!</p>
       <form class="navbar-form" role="search" action="{% url 'search' %}">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search Category" name="category">
@@ -50,7 +50,7 @@
     <div class="col-md-1"></div>
     <div class="col-md-5 col-sm-6">
       {% if locations %}
-      <h4>Locations</h4>
+      <h4 style="color: white;">Locations</h4>
       {% for location in locations %}
       <a href="/location/{{location.id}}" class="badge" style="margin-left: 1%;"><i
           class="fas fa-map-marker-alt"></i>&nbsp;{{location.name}}</a>
@@ -59,7 +59,7 @@
     </div>
     <div class="col-md-5 col-sm-6">
       {% if categories %}
-      <h4>Categories</h4>
+      <h4  style="color: white;">Categories</h4>
       {% for category in categories %}
       <a href="/category/{{category.id}}" class="badge"
         style="margin-left: 1%;">#{{category.name}}</a>
