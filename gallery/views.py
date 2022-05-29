@@ -87,5 +87,15 @@ def category(request, category_id):
         title= "Not Found"
         return render(request, 'search.html',{"title":title,"message":message, "categories": categories})
     
+#image 
+
+def image(request, image_id):
+    try:
+        image = Image.objects.get(id=image_id)
+        print(image.category.id)
+    except ViewDoesNotExist:
+        message = "No image to display or image deleted"
+        return render(request, 'image.html', {"message":message})
+    return render(request, 'image.html', {"image":image})  
 
 
