@@ -11,8 +11,99 @@ font-family: 'Dancing Script', cursive;
   font-family: 'Dancing Script', cursive;
 }
 
+.menu
+{
+background-color: #00547E;
+/* border-bottom: 4px solid #04A3ED; */
+width:100%;
+height: auto;
+padding: 0 5px;
+position: fixed;
+z-index: 1;
+opacity: 0.9;
+}
 
-.nav-item {
+.menu  .navbar-nav > .active > a
+{
+background-color : #04A3ED;
+color: white;
+font-weight: bold;
+}
+
+.menu  .navbar-nav >  li >  a
+{
+font-size: 13px;
+color: white;
+padding: 5px 10px;
+
+}
+.menu  .navbar-nav >  li >  a:hover
+{
+background-color: #04A3ED;
+}
+
+.navbar-header > a
+{
+font-family: 'Ubuntu Condensed', sans-serif;
+padding: 0px;
+margin: 0px;
+text-decoration: none;
+color: white;
+font-size: 25px;
+padding: 5px 10px;
+}
+.navbar-header > a:hover
+{
+text-decoration: none;
+color: #04A3ED;
+}
+/* menu
+{
+background-color: #a00;
+border-bottom: 4px solid #a00;
+width:100%;
+height: auto;
+padding: 0 10px;
+position: fixed;
+margin: 0px;
+z-index: 1;
+opacity: 0.9;
+}
+
+.menu  .navbar-nav > .active > a
+{
+background-color : #a00;
+font-weight: bold;
+}
+
+.menu  .navbar-nav >  li >  a
+{
+font-size: 13px;
+color: #a00;
+padding: 10px 35px;
+
+}
+.menu  .navbar-nav >  li >  a:hover
+{
+background-color: #a00;
+}
+
+.navbar-header > a
+{
+font-family: 'Ubuntu Condensed', sans-serif;
+padding: 0px;
+margin: 0px;
+text-decoration: none;
+font-size: 25px;
+padding: 5px 30px;
+}
+.navbar-header > a:hover
+{
+text-decoration: none;
+color: #a00;
+} */
+
+/* .nav-item {
   color: #a00;
   padding: 6px 12px;
   margin: 0 6px;
@@ -22,7 +113,7 @@ font-family: 'Dancing Script', cursive;
 
 .nav-admin{
   margin-right: 0 !important;
-}
+} */
 
 .container-fluid {
   margin-top: 6%;
