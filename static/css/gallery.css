@@ -130,7 +130,7 @@ color: #a00;
 }
 
 #home-btn {
-  color: #a00 !important;
+  color: #00547E !important;
   font-size: 15px;
 }
 
@@ -201,7 +201,7 @@ p {
   line-height: 48px;
   text-align: center;
   border-radius: 50%;
-  background-color: #a00;
+  background-color: #00547E;
   transition: all 0.3s ease;
   outline: 0;
   z-index: 2;
@@ -231,6 +231,23 @@ p {
 
 .badge {
   font-size: 1rem;
-  background-color: #a00;
+  background-color: #00547E;
   margin-bottom: 1%;
+}
+
+/* make app responsive */
+@media (max-width: 767px) {
+  .navbar {
+      height: 7rem !important;
+  }
+
+  #brand {
+      font-size: 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar {
+      border-radius: 0 !important;
+  }
 }
