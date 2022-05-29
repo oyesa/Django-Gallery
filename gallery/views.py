@@ -25,7 +25,7 @@ def home(request):
 
 
 
-#search_results function
+#search function
 def search(request):
   if 'category' in request.GET and request.GET["category"]:
     search = request.GET.get("category")
@@ -43,16 +43,49 @@ def search(request):
             message = "No items in this category " + search.upper()
             categories = Category.objects.all()
             return render(request, 'search.html',{"message":message, "categories": categories}) 
+  else:
+        message = "You haven't searched any category"
+        return render(request, 'search.html',{"message":message})
 
 
 
-#display image in names location
+#display image in named location
 def location(request, location_id):
-    locations = Location.objects.all()
-    images = Image.objects.filter(location_id=location_id)
-    location = Location.objects.get(id=location_id)
-    title = location
-    return render(request, 'location.html', {'images': images, 'locations': locations, 'title': title})
+    try:
+        location = Location.objects.get(id=location_id)
+        images = Image.filter_by_location(location)
+        arr= np.array(images) 
+        newarr = np.array_split(arr,3)
+        first = newarr[0]
+        second = newarr[1]
+        third = newarr[2]
+        message = location.name
+        title = location.name
+        return render(request, 'search.html',{"title":title, "message":message,"images": images,"first": first,"second": second,"third": third})
+    except ViewDoesNotExist:
+        message = "No items in this location"
+        locations = Location.objects.all()
+        title= "Not Found"
+        return render(request, 'search.html',{"title":title,"message":message, "locations": locations})
+
+#display image in named category
+def category(request, category_id):
+    try:
+        category = Category.objects.get(id = category_id)
+        images = Image.search_image(category)
+        arr= np.array(images) 
+        newarr = np.array_split(arr,3)
+        first = newarr[0]
+        second = newarr[1]
+        third = newarr[2]
+        message = category.name
+        title = category.name
+        return render(request, 'search.html',{"title":title, "message":message,"images": images,"first": first,"second": second,"third": third})
+    except ViewDoesNotExist:
+        message = "No items in this location" + search.upper()
+        categories = Category.objects.all()
+        title= "Not Found"
+        return render(request, 'search.html',{"title":title,"message":message, "categories": categories})
     
 
 
